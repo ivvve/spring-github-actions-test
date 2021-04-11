@@ -17,8 +17,8 @@ jobs:
         run: chmod +x gradlew
       - name: Test with Gradle
         run: ./gradlew --info test
-      - uses: actions/upload-artifact@v2
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
         if: ${{ always() }}
         with:
-          name: Package
-          path: build/reports
+          files: build/test-results/**/*.xml
