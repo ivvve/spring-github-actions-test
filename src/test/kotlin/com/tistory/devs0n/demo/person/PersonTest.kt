@@ -19,6 +19,6 @@ internal class PersonTest {
 
         // then
         assertThat(person.name).isNotEqualTo(oldName)
-        assertThat(person.name).isEqualTo(newName)
+        assertThat(person.name).isNotEqualTo(newName)
     }
 }
